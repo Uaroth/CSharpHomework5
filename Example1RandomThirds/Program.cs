@@ -15,6 +15,8 @@ int[] RandomTrioFill(int[] numbers)
     }
     return numbers;
 }
+
+
 void EvenCheck(int[] numbers)
 {
     int evenCount = 0;
