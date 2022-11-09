@@ -1,32 +1,33 @@
-﻿// // See https://aka.ms/new-console-template for more information
-// Console.WriteLine("Hello, World!");
+﻿// Задайте массив вещественных чисел.
+// Найдите разницу между максимальным и минимальным элементов массива.
 
-// double[] someNum = new double[5];
-// someNum = RandomFill(someNum);
-// // OddSum(someNum);
+double[] someNum = new double[5];
+someNum = RandomFill(someNum);
+MaxMinusMin(someNum);
 
-// double[] RandomFill(double[] numbers)
-// {
-//     Console.WriteLine("Массив таков");
-//     for (int i = 0; i < numbers.Length; i++)
-//     {
-//         numbers[i] = Random().Next();
-//         Console.Write($"{numbers[i]} . ");
-//     }
-//     Console.WriteLine();
-//     return numbers;
-// }
+double[] RandomFill(double[] numbers)
+{
+    Console.WriteLine("Массив таков");
+    for (int i = 0; i < numbers.Length; i++)
+    {
+        numbers[i] = new Random().Next(-100, 100);
+        Console.Write($"{numbers[i]} . ");
+    }
+    Console.WriteLine();
+    return numbers;
+}
 
 
-// // void OddSum(double[] numbers)
-// // {
-// //     double sum = 0;
-// //     for (int i = 0; i < numbers.Length; i++)
-// //     {
-// //         if (i % 2 != 0)
-// //         {
-// //             sum = sum + numbers[i];
-// //         }
-// //     }
-// //     Console.WriteLine($"Сумма элементов на нечётных позициях = {sum}");
-// // }
+void MaxMinusMin(double[] numbers)
+{
+    double max = numbers[0];
+    double min = numbers[0];    
+    for (int i = 0; i < numbers.Length; i++)
+    {
+        if (max < numbers[i]) max = numbers[i];
+        else if (min > numbers[i]) min = numbers[i];
+    }
+    Console.WriteLine($"Максимум {max}");
+    Console.WriteLine($"Минимум {min}");
+    Console.WriteLine($"Разница максимума и минимума = {max - min}");
+}
